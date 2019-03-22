@@ -1,0 +1,17 @@
+<ion-list>
+    <ion-item-sliding class="animated fadeInDown" *ngFor="let lista of deseosProvider.listas | filtroCompletado:estado">
+        <button ion-item (click)="listaSeleccionada(lista)">
+        {{ lista.titulo }}
+    </button>
+        <ion-item-options side="left">
+            <button (click)="editarLista(lista, slidingItem)" icon-only ion-button color="primary">
+            <ion-icon name="create"></ion-icon>
+        </button>
+        </ion-item-options>
+        <ion-item-options side="rigth">
+            <button (click)="borrarLista(lista)" icon-only ion-button color="danger">
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-item-options>
+    </ion-item-sliding>
+</ion-list>
